@@ -1,0 +1,31 @@
+
+:root {
+  --bg: @board@;
+  --bg-raised: @card@;
+  --bg-input: @board@;
+  --bg-hover: @hover@;
+  --bg-sunken: @board@;
+  --border: @line@;
+  --border-strong: @line2@;
+  --text: @body@;
+  --text-bright: @ink@;
+  --text-dim: @muted@;
+  --text-mute: @muted@;
+  --accent: @accent@;
+  --on-accent: @onAccent@;
+  --link: @link@;
+  --link-hover: @accent@;
+}
+
+.stats,
+.stats-counter,
+.ch-card-count,
+.ac-count {
+  font-family: @fontMono@ !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+.grid.view-normal {
+  gap: 2px !important;
+  background-color: @board@ !important;
+}

@@ -1,0 +1,53 @@
+
+:root,
+[data-theme] {
+  --background: @board@;
+  --foreground: @ink@;
+  --card: @card@;
+  --card-foreground: @ink@;
+  --popover: @card@;
+  --popover-foreground: @ink@;
+  
+  --primary: @accent@;
+  --primary-foreground: @onAccent@;
+  --secondary: @accent@;
+  --secondary-foreground: @onAccent@;
+  --muted: @hover@;
+  --muted-foreground: @muted@;
+  --accent: @hover@;
+  --accent-foreground: @ink@;
+  --border: @line@;
+  --input: @line@;
+  --ring: @accent@;
+  
+  --radius: 0;
+  --custom-icon: @ink@;
+  --custom-loading-bar: @accent@;
+  --divider: @line@;
+  color-scheme: dark;
+}
+
+  background-color: @card@;
+  border: 1px solid @line@;
+  padding: 1.5rem;
+}
+
+  border-radius: 0;
+  box-shadow: none;
+}
+  border-color: @line@;
+  caret-color: @ink@;
+}
+
+  border-color: @hairline@;
+}
+  background-color: @accent@;
+  color: @onAccent@;
+}
+  background-color: @accentHover@;
+}
+
+a[href*="authelia"] {
+  font-family: @fontMono@;
+  font-variant-numeric: tabular-nums;
+}

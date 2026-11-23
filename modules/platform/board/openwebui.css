@@ -1,0 +1,72 @@
+
+html, html.light, html.dark {
+  color-scheme: dark;
+  background: @board@;
+  color: @ink@;
+  --color-gray-50: @ink@;
+  --color-gray-100: @ink@;
+  --color-gray-200: @body@;
+  --color-gray-300: @body@;
+  --color-gray-400: @body@;
+  --color-gray-500: @muted@;
+  --color-gray-600: @muted@;
+  --color-gray-700: @hover@;
+  --color-gray-800: @card@;
+  --color-gray-850: @card@;
+  --color-gray-900: @board@;
+  --color-gray-950: @board@;
+}
+html.dark .bg-white,
+html.light .bg-white,
+.bg-white {
+  background-color: @card@ !important;
+  color: @ink@ !important;
+}
+button.bg-white,
+a.bg-white,
+button.bg-black,
+a.bg-black,
+html.dark button.bg-white,
+html.dark button.bg-black {
+  background-color: @accent@ !important;
+  color: @onAccent@ !important;
+}
+html.dark .text-black,
+.text-black {
+  color: @ink@ !important;
+}
+
+html.light #send-message-button,
+html.dark #send-message-button,
+  background-color: @accent@ !important;
+  color: @onAccent@ !important;
+  border-radius: 0 !important;
+}
+  background-color: @accentHover@ !important;
+  color: @onAccent@ !important;
+}
+
+html.light #send-message-button.rounded-full,
+html.dark #send-message-button.rounded-full,
+  border-radius: 0 !important;
+}
+html.light a#sidebar-new-chat-button,
+html.dark a#sidebar-new-chat-button,
+a#sidebar-new-chat-button {
+  background-color: @board@ !important;
+  color: @ink@ !important;
+  border: 1px solid @hairline@ !important;
+  border-radius: 0 !important;
+}
+html.light a#sidebar-new-chat-button.rounded-xl,
+html.dark a#sidebar-new-chat-button.rounded-xl,
+a#sidebar-new-chat-button.rounded-xl {
+  border-radius: 0 !important;
+}
+a {
+  color: @link@;
+}
+html, body {
+  background-color: @board@ !important;
+  color: @ink@ !important;
+}

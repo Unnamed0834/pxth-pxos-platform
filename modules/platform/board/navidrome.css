@@ -1,0 +1,55 @@
+
+html, body, #root {
+  background: @board@ !important;
+  color: @ink@ !important;
+}
+.MuiDrawer-paper, .MuiAppBar-root, .MuiPaper-root, .MuiTableCell-root {
+  background-color: @card@ !important;
+  color: @ink@ !important;
+}
+.MuiInputBase-root, .MuiFilledInput-root, .MuiOutlinedInput-root, .MuiSelect-select {
+  background-color: @well@ !important;
+  color: @ink@ !important;
+}
+.MuiOutlinedInput-notchedOutline, .MuiDivider-root {
+  border-color: @line@ !important;
+}
+.MuiInputBase-input, .MuiFormLabel-root, .MuiInputLabel-root {
+  color: @ink@ !important;
+}
+.MuiAppBar-colorPrimary, .MuiButton-containedPrimary, .MuiFab-primary, .MuiChip-colorPrimary {
+  background-color: @accent@ !important;
+  color: @onAccent@ !important;
+}
+.MuiButton-textPrimary, .MuiIconButton-colorPrimary, .MuiTab-textColorPrimary.Mui-selected, .MuiTypography-colorPrimary, .MuiLink-root {
+  color: @link@ !important;
+}
+.MuiListItemText-secondary, .MuiTypography-colorTextSecondary {
+  color: @muted@ !important;
+}
+html body .react-jinke-music-player-main svg:active,
+html body .react-jinke-music-player-main svg:hover,
+html body .react-jinke-music-player-main .audio-item.playing svg,
+html body .react-jinke-music-player-main .audio-item.playing .player-singer,
+html body .audio-lists-panel-content .audio-item.playing,
+html body .audio-lists-panel-content .audio-item.playing svg,
+html body .audio-lists-panel-content .audio-item:hover .group:not([class=".player-delete"]) svg {
+  color: @link@ !important;
+}
+html body .react-jinke-music-player-main .music-player-panel .panel-content .rc-slider-handle,
+html body .react-jinke-music-player-main .music-player-panel .panel-content .rc-slider-track,
+html body .react-jinke-music-player-main ::-webkit-scrollbar-thumb {
+  background-color: @accent@ !important;
+}
+html body .react-jinke-music-player-main,
+html body .react-jinke-music-player-main .music-player-panel {
+  background-color: @card@ !important;
+  color: @ink@ !important;
+}
+
+[class*="metric"],
+[class*="stat"],
+[class*="value"] {
+  font-family: @fontMono@ !important;
+  font-variant-numeric: tabular-nums !important;
+}

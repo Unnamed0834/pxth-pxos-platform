@@ -1,0 +1,72 @@
+#!/bin/bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+REPO="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+usage() {
+  cat <<'EOF'
+Usage: bootstrap <host> <user@ip> [--age-key PATH]
+
+  <host>    flake attr (e.g. dev)
+  <user@ip> installer login (e.g. root@192.0.2.103)
+EOF
+}
+
+host="${1:-}"
+target="${2:-}"
+shift 2 2>/dev/null || true
+if [ -z "$host" ] || [ -z "$target" ]; then usage; exit 1; fi
+
+age_key="${PAXOS_AGE_KEY:-}"
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --age-key) age_key="$2"; shift ;;
+    -h|--help) usage; exit 0 ;;
+    *) echo "unknown arg: $1" >&2; usage; exit 1 ;;
+  esac
+  shift
+done
+if [ -z "$age_key" ]; then age_key="/run/secrets/age-key"; fi
+if [ ! -f "$age_key" ]; then
+  echo "age identity not found: $age_key" >&2
+  echo "set PAXOS_AGE_KEY or place the fleet key at /run/secrets/age-key (never commit it)" >&2
+  exit 1
+fi
+
+user="${target%%@*}"
+ip="${target##*@}"
+if [ -z "$user" ] || [ -z "$ip" ] || [ "$user" = "$target" ]; then usage; exit 1; fi
+
+export SSHPASS="${SSHPASS:-nixos}"
+
+echo "==> start temp VM"
+if limactl list 2>/dev/null | grep -q "^bootstrap "; then
+  limactl start bootstrap
+else
+  limactl start "$REPO/bootstrap/bootstrap.yaml" --name bootstrap
+fi
+
+echo "==> wait for guest"
+for i in $(seq 1 60); do
+  if limactl shell bootstrap -- true 2>/dev/null; then break; fi
+  sleep 10
+  if [ "$i" = 60 ]; then echo "guest never came up" >&2; exit 1; fi
+done
+
+echo "==> provision guest"
+limactl shell bootstrap -- /pxth-pxos-platform/bootstrap/provision.sh
+
+echo "==> stage age key (guest tmpfs, shredded with the VM)"
+GUEST_KEY=/tmp/paxos-age-key
+ssh -F "$HOME/.lima/bootstrap/ssh.config" -o BatchMode=yes lima-bootstrap \
+  "umask 077; cat > $GUEST_KEY && chmod 600 $GUEST_KEY" < "$age_key"
+
+echo "==> nixos-anywhere (remote build on target)"
+limactl shell bootstrap -- /pxth-pxos-platform/bootstrap/bootstrap.sh "$host" \
+  --installer-ip "$ip" --age-key "$GUEST_KEY" --flake /pxth-pxos-platform --ssh-user "$user"
+
+echo "==> stop temp VM"
+limactl stop bootstrap
+
+echo "ok ${host}; verify: ssh operator@<final-static-ip> (host config address, not installer DHCP)"

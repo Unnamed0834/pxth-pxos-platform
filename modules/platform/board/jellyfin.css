@@ -1,0 +1,110 @@
+
+:root, body {
+  --jf-palette-primary-main: @accent@;
+  --jf-palette-primary-light: @link@;
+  --jf-palette-primary-dark: @accentDark@;
+  --jf-palette-primary-contrastText: @onAccent@;
+  --jf-palette-background-default: @board@;
+  --jf-palette-background-paper: @card@;
+  --jf-palette-text-primary: @ink@;
+  --jf-palette-text-secondary: @muted@;
+  --jf-palette-divider: @line@;
+  --jf-palette-AppBar-defaultBg: @card@;
+  --mui-palette-primary-main: @accent@;
+  --mui-palette-background-default: @board@;
+  --mui-palette-background-paper: @card@;
+  --mui-palette-text-primary: @ink@;
+  --mui-palette-text-secondary: @muted@;
+}
+html, body, .backgroundContainer, .wizardStartForm, .dialog, .nowPlayingPlaylist {
+  background-color: @board@ !important;
+  color: @ink@ !important;
+}
+.skinHeader, .skinHeader-withBackground:not(.osdHeader), .MuiAppBar-root, .MuiDrawer-paper, .MuiPaper-root, .paperList, .formDialogHeader {
+  background-color: @card@ !important;
+  background-image: none !important;
+  color: @ink@ !important;
+  border-color: @line@ !important;
+}
+.emby-button.raised, .fab, .btnPlay, .playButton, .itemProgressBarForeground {
+  background: @accent@ !important;
+  background-color: @accent@ !important;
+  color: @onAccent@ !important;
+}
+.emby-tab-button-active, .navMenuOption-selected, .button-accent-flat {
+  color: @link@ !important;
+}
+.page:not(#videoOsdPage), .scrollFrameY, .scrollY, .mainAnimatedPages, .loginPage {
+  background-color: @board@ !important;
+  color: @ink@ !important;
+}
+input:not([type="range"]), textarea, select, .emby-input, .emby-textarea, .emby-select {
+  background-color: @well@ !important;
+  color: @ink@ !important;
+  border-color: @line@ !important;
+}
+input:not([type="range"]):focus, textarea:focus, select:focus, .emby-input:focus, .emby-textarea:focus {
+  border-color: @accent@ !important;
+}
+
+.itemFocus :before, .itemFocus ::before {
+  border: 1px solid @hairline@ !important;
+  box-shadow: none !important;
+}
+.paper-icon-button-light:focus, .paper-icon-button-light:focus-visible, .emby-button:focus-visible, .Mui-focusVisible {
+  outline: 1px solid @hairline@ !important;
+  box-shadow: none !important;
+}
+.paper-icon-button-light:hover:not(:disabled), .listItemButton:hover {
+  background-color: @band@ !important;
+}
+.checkboxOutline, .emby-checkbox-focusoutline, .listItemIcon:not(.listItemIcon-transparent),
+progress::-moz-progress-bar, progress::-webkit-progress-value, .playbackProgress > div {
+  background-color: @accent@ !important;
+  border-color: @accent@ !important;
+  color: @onAccent@ !important;
+}
+.wizardContent, .formDialog, .selectedMediaFolder {
+  background: @card@ !important;
+  background-color: @card@ !important;
+  color: @ink@ !important;
+}
+
+  background: transparent !important;
+  background-color: transparent !important;
+}
+.skinHeader-withBackground.osdHeader {
+  background: linear-gradient(180deg, rgba(@boardRgb@, .75), rgba(@boardRgb@, 0)) !important;
+  background-image: linear-gradient(180deg, rgba(@boardRgb@, .75), rgba(@boardRgb@, 0)) !important;
+  color: @ink@ !important;
+}
+.videoOsdBottom {
+  background: linear-gradient(0deg, rgba(@boardRgb@, .82), rgba(@boardRgb@, 0)) !important;
+  color: @ink@ !important;
+}
+.mdl-slider, .osdPositionSlider, .osdVolumeSlider {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: @accent@ !important;
+}
+.mdl-slider::-webkit-slider-runnable-track, .mdl-slider::-moz-range-track {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+.mdl-slider::-webkit-slider-thumb, .mdl-slider::-moz-range-thumb {
+  background: @accent@ !important;
+  background-color: @accent@ !important;
+}
+.mdl-slider-background-lower, .sliderMarker.watched {
+  background-color: @accent@ !important;
+}
+.sliderBubble {
+  background: @card@ !important;
+  background-color: @card@ !important;
+  color: @ink@ !important;
+  z-index: 3 !important;
+}
+.sliderBubbleText, .chapterThumbText {
+  color: @ink@ !important;
+}

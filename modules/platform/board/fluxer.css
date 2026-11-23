@@ -1,0 +1,67 @@
+
+html, html[class*="theme-"] {
+  --brand-primary: @accent@ !important;
+  --text-on-brand-primary: @onAccent@ !important;
+  --text-link: @link@ !important;
+  --background-tertiary: @board@ !important;
+  --background-secondary: @board@ !important;
+  --background-primary: @card@ !important;
+  --background-secondary-alt: @hover@ !important;
+  --background-secondary-lighter: @card@ !important;
+  --background-textarea: @well@ !important;
+  --background-channel-header: @card@ !important;
+  --background-header-primary: @card@ !important;
+  --background-header-primary-hover: @hover@ !important;
+  --background-header-secondary: @board@ !important;
+  --background-modifier-hover: @hover@ !important;
+  --background-modifier-selected: @line@ !important;
+  --background-modifier-accent: @line@ !important;
+  --border-color: @line@ !important;
+  --text-primary: @ink@ !important;
+  --text-secondary: @body@ !important;
+  --text-tertiary: @muted@ !important;
+  --text-primary-muted: @muted@ !important;
+  --bg-primary: @card@ !important;
+  --bg-secondary: @board@ !important;
+  --bg-tertiary: @board@ !important;
+  --guild-list-foreground: @ink@ !important;
+}
+
+
+[class*="AuthLayout.module__container"] {
+  background: @board@ !important;
+  background-color: @board@ !important;
+}
+
+html.auth-page,
+html.auth-page body {
+  background-color: @board@ !important;
+}
+  background: @board@ !important;
+  background-color: @board@ !important;
+}
+[class*="AuthLayout.module__scrollerWrapper"],
+[class*="SpaceBackground.module__spaceBackground"] {
+  background: @board@ !important;
+  background-color: @board@ !important;
+}
+[class*="AuthLayout.module__card___"],
+[class*="AuthLayout.module__logoSide"],
+[class*="AuthLayout.module__formSide"] {
+  background: @card@ !important;
+  background-color: @card@ !important;
+}
+[class*="AuthLayout.module__logoSide"] svg circle,
+[class*="AuthLayout.module__logoSide"] svg rect,
+[class*="AuthLayout.module__logoSide"] svg path:first-child {
+  fill: @accent@ !important;
+}
+input, textarea {
+  background-color: @well@ !important;
+  color: @ink@ !important;
+  border-color: @line@ !important;
+}
+[class*="Button.module__primary"],
+[class*="Button.module__primary"] * {
+  color: @onAccent@ !important;
+}

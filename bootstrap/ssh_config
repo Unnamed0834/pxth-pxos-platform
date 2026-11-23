@@ -1,0 +1,14 @@
+# pxOS steady-state SSH — bootstrap template. Copy to ~/.ssh/config.
+
+Host node-01
+  HostName 192.0.2.10
+  User operator
+  IdentityFile ~/.ssh/id_bootstrap
+  IdentitiesOnly yes
+
+Host dev
+  HostName 192.0.2.10
+  User operator
+  IdentityFile ~/.ssh/id_bootstrap
+  IdentitiesOnly yes
+

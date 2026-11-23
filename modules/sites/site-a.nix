@@ -1,0 +1,6 @@
+
+
+{
+  domain = "example.com";
+  email = "admin@example.com";
+}

@@ -1,0 +1,2 @@
+{{- range .Matches}}{{.Vulnerability.Severity}} {{if .Vulnerability.Fix.State}}{{.Vulnerability.Fix.State}}{{else}}unknown{{end}} {{.Vulnerability.ID}}
+{{end}}

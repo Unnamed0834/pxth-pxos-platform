@@ -1,0 +1,98 @@
+
+html, html.dark, .dark, :root.dark, :root.dark[data-app-theme] {
+  --background: @board@ !important;
+  --foreground: @ink@ !important;
+  --card: @card@ !important;
+  --card-foreground: @ink@ !important;
+  --popover: @card@ !important;
+  --popover-foreground: @ink@ !important;
+  --primary: @link@ !important;
+  --primary-foreground: @onAccent@ !important;
+  --secondary: @hover@ !important;
+  --secondary-foreground: @ink@ !important;
+  --muted: @hover@ !important;
+  --muted-foreground: @muted@ !important;
+  --accent: @hover@ !important;
+  --accent-foreground: @ink@ !important;
+  --border: @line@ !important;
+  --input: @line@ !important;
+  --ring: @accent@ !important;
+  --sidebar: @board@ !important;
+  --sidebar-foreground: @ink@ !important;
+  --sidebar-primary: @accent@ !important;
+  --sidebar-primary-foreground: @onAccent@ !important;
+  --sidebar-accent: @hover@ !important;
+  --sidebar-accent-foreground: @ink@ !important;
+  --sidebar-border: @line@ !important;
+  --sidebar-ring: @accent@ !important;
+  --surface: @card@ !important;
+  --bg-surface: @card@ !important;
+  --glass-base: @card@ !important;
+  --glass-tint: @hover@ !important;
+}
+html, body {
+  background-color: @board@ !important;
+  color: @ink@ !important;
+}
+
+[class*="metric"],
+[class*="stat"],
+[class*="value"] {
+  font-family: @fontMono@ !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+[data-slot="card"] {
+  border-radius: 0 !important;
+  border-color: @line@ !important;
+}
+
+[class*="backdrop-blur"] {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+[data-slot="dialog-overlay"],
+[data-slot="sheet-overlay"] {
+  background-color: rgba(@boardRgb@, 0.6) !important;
+}
+[data-slot="sheet-content"],
+[data-slot="dialog-content"] {
+  background-color: @card@ !important;
+  border-color: @line@ !important;
+}
+[data-slot="sidebar-inner"] {
+  background-color: @board@ !important;
+}
+[data-slot="sidebar-menu-button"][data-active="true"],
+[data-slot="sidebar-menu-button"][data-active="active"] {
+  background-color: @hover@ !important;
+}
+[data-slot="input-group"] {
+  background-color: @well@ !important;
+}
+[data-slot="dropdown-menu-content"],
+[data-slot="popover-content"] {
+  background-color: @card@ !important;
+  border-color: @line@ !important;
+}
+[data-slot="card"][class*="bg-primary/"] {
+  background-color: @hover@ !important;
+}
+[data-slot="arcane-button"][class*="bg-primary/"] {
+  background-color: @accent@ !important;
+  color: @onAccent@ !important;
+}
+[data-slot="arcane-button"][class*="bg-"][class*="/"] {
+  background-color: @hover@ !important;
+}
+
+[data-slot="dialog-overlay"],
+[data-slot="dialog-content"],
+[data-slot="dialog-header"],
+[data-slot="dialog-footer"],
+[data-slot="sheet-overlay"],
+[data-slot="sheet-content"],
+[data-slot="sheet-header"],
+[data-slot="sheet-footer"] {
+  border-radius: 0 !important;
+}

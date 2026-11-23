@@ -1,0 +1,153 @@
+
+body {
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    sans-serif !important;
+}
+.material-icons,
+.material-icons-outlined,
+.md-icon {
+  font-family: "Material Icons" !important;
+}
+h1,
+h2,
+h3,
+.pageTitle,
+.sectionTitle,
+.MuiTypography-h1,
+.MuiTypography-h2,
+.MuiTypography-h3,
+.MuiTypography-h4,
+.MuiTypography-h5,
+.MuiTypography-h6 {
+  font-weight: 600 !important;
+}
+button,
+.emby-button,
+.MuiButton-root,
+.MuiChip-root,
+[class*="Button.module__"] {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  font-variant-numeric: tabular-nums;
+}
+.MuiButton-outlined,
+.emby-button:not(.raised):not(.fab),
+[class*="Button.module__secondary"],
+[class*="Button.module__outline"] {
+  background-color: @board@ !important;
+  color: @ink@ !important;
+  border: 1px solid @hairline@ !important;
+}
+.emby-button.raised:hover,
+.MuiButton-containedPrimary:hover,
+.MuiFab-primary:hover,
+button.bg-white:hover,
+button.bg-black:hover,
+[class*="Button.module__primary"]:hover {
+  background-color: @accentHover@ !important;
+  color: @onAccent@ !important;
+}
+
+@font-face {
+  font-family: "Board Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    local("IBM Plex Mono"),
+    local("IBMPlexMono-Regular"),
+    url("/board-fonts/board-mono-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Board Mono";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src:
+    local("IBM Plex Mono SemiBold"),
+    local("IBMPlexMono-SemiBold"),
+    url("/board-fonts/board-mono-600.woff2") format("woff2");
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: @fontMono@ !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+.board-grid {
+  gap: 2px !important;
+  background-color: @board@ !important;
+}
+.board-tile {
+  background-color: @card@ !important;
+}
+
+.board-ramp-1 {
+  background-color: @ramp1@ !important;
+}
+.board-ramp-2 {
+  background-color: @ramp2@ !important;
+}
+.board-ramp-3 {
+  background-color: @ramp3@ !important;
+}
+.board-ramp-4 {
+  background-color: @ramp4@ !important;
+}
+
+.board-divider,
+hr {
+  border: 0 !important;
+  border-top: 1px dashed @divider@ !important;
+  opacity: 0.5;
+}
+
+.board-flagged {
+  background: @accent@ !important;
+  outline: 2px solid @hairline@ !important;
+  color: @onAccent@ !important;
+}
+
+[class*="chart"]:hover {
+  background-color: @band@ !important;
+}
+
+[class*="bar"] i,
+[class*="fill"],
+progress,
+meter {
+  border-radius: 999px !important;
+}
+
+button[class*="fill"],
+button[class*="bar"] {
+  border-radius: 0 !important;
+}
+
+[data-slot*="dialog"],
+[data-slot*="sheet"] {
+  border-radius: 0 !important;
+}
+
+::selection {
+  background-color: @accent@;
+  color: @onAccent@;
+}
+
+html {
+  color-scheme: dark;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 100rem @card@ inset;
+  -webkit-text-fill-color: @ink@;
+  caret-color: @ink@;
+  border-color: @line@;
+}

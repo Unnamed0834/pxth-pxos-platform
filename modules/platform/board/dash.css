@@ -1,0 +1,17 @@
+
+.grid {
+  gap: 2px !important;
+  background-color: @board@ !important;
+}
+
+.today,
+.gate {
+  background-color: @board@ !important;
+  color: @ink@ !important;
+  border: 1px solid @hairline@ !important;
+  border-radius: 0 !important;
+}
+.who {
+  font-family: @fontMono@ !important;
+  font-variant-numeric: tabular-nums !important;
+}

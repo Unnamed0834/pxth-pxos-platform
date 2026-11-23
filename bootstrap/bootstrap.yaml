@@ -1,0 +1,29 @@
+vmType: qemu
+arch: x86_64
+cpus: 1
+memory: 2GiB
+disk: 20GiB
+
+images:
+- location: "https://github.com/nixos-lima/nixos-lima/releases/download/v0.2.1/nixos-lima-v0.2.1-x86_64.qcow2"
+  arch: "x86_64"
+  digest: "sha512:636c9c24d7aea340c808e72802cd05589d18c1bbeda45242e3c4725cdfdcc497cfdfd4dfecd76e4be7b8de3a688a1046f269c072bce487c0b06a60515262995e"
+
+mounts:
+- location: "{{.Home}}/workspace/pxth-pxos-platform"
+  mountPoint: /pxth-pxos-platform
+  writable: true
+  9p:
+    cache: "mmap"
+
+portForwards:
+- proto: udp
+  guestPort: 68
+  guestIP: 0.0.0.0
+  ignore: true
+
+
+containerd:
+  system: false
+  user: false
+
